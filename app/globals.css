@@ -1,26 +1,71 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-heading: var(--font-heading);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-destructive: var(--destructive);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-star: var(--star);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+
+  --background: #faf9f6;
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --muted: #c0c0c0;
+  --destructive: oklch(0.577 0.245 27.325);
+  --star: #ffd700;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --muted: oklch(0.269 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+}
+
+@layer base {
+  * {
+    @apply border-muted;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .flex-center {
+    @apply flex items-center-safe;
+  }
+  .grid-center {
+    @apply grid place-items-center-safe;
+  }
+  .custom-border {
+    @apply relative before:absolute before:-top-1 before:-right-1 before:size-1/2 before:shadow-[1.5px_-1.5px_var(--foreground)] after:absolute after:-bottom-1 after:-left-1 after:size-1/2 after:shadow-[-1.5px_1.5px_var(--foreground)] hover:before:top-1 hover:before:right-1 hover:after:bottom-1 hover:after:left-1 duration-300 before:duration-300 after:duration-300;
+  }
+}
+
+@keyframes appear {
+  from {
+    scale: 0;
+    visibility: hidden;
+  }
+  to {
+    scale: 1;
+    visibility: visible;
+  }
 }

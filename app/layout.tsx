@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/layout/navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const defaultFont = localFont({
+  src: "../public/fonts/Satoshi-Regular.otf",
+  weight: "400",
+  style: "normal",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const headingFont = localFont({
+  src: "../public/fonts/Bevellier-Medium.otf",
+  weight: "500",
+  style: "normal",
+  variable: "--font-heading",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${defaultFont.className} ${headingFont.variable} antialiased h-dvh w-screen overflow-x-hidden`}
       >
-        {children}
+        <Navbar />
+        <main className="h-[calc(100dvh-4rem)] container mx-auto">
+          {children}
+        </main>
       </body>
     </html>
   );
