@@ -79,8 +79,9 @@ export default function WalletPage() {
 
   return (
     <>
+      <AccountHeader header="Wallet" />
+
       <div className="space-y-4">
-        <AccountHeader header="Wallet" />
         <section className="p-4 border-2 border-muted rounded flex items-end-safe gap-4">
           <header className="space-y-1 flex-1">
             <p className="font-heading">Total amount</p>
@@ -99,12 +100,14 @@ export default function WalletPage() {
         </section>
       </div>
 
-      <div className="mt-4 space-y-4">
+      <div className="mt-4 space-y-4 overflow-y-auto">
         <header className="font-heading text-xl">Transaction history</header>
 
         <Table>
           <TableCaption className="italic text-muted">
-            A list of your recent transactions.
+            {transactionHistory.length !== 0
+              ? "A list of your recent transactions."
+              : "No transactions yet"}
           </TableCaption>
 
           <TableHeader>

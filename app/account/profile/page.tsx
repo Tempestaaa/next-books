@@ -8,7 +8,7 @@ export default function ProfilePage() {
     <>
       <AccountHeader header="Profile Settings" />
 
-      <div className="flex flex-col gap-4 *:p-4 *:border-2 *:border-muted *:rounded">
+      <div className="flex flex-col gap-4 *:p-4 *:border-2 *:border-muted *:rounded overflow-y-auto">
         <AvatarSection />
         <PersonalSection />
         <AddressSection />

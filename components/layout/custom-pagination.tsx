@@ -12,7 +12,7 @@ type Props = {};
 
 export default function CustomPagination({}: Props) {
   return (
-    <Pagination>
+    <Pagination className="h-fit">
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious href="#" />
