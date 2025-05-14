@@ -13,11 +13,7 @@ export default function FilterHeader() {
         {searchParams.size !== 0 && <span>({searchParams.size})</span>}
       </header>
 
-      {searchParams.size !== 0 && (
-        <Button variant="destructive" className="">
-          Clear
-        </Button>
-      )}
+      {searchParams.size !== 0 && <Button variant="destructive">Clear</Button>}
     </div>
   );
 }

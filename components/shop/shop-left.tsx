@@ -8,7 +8,7 @@ import { Accordion } from "@/components/ui/accordion";
 
 export default function ShopLeft() {
   return (
-    <div className="w-60 py-4 space-y-2">
+    <div className="w-60 flex flex-col gap-4">
       <FilterHeader />
 
       <Accordion type="multiple">

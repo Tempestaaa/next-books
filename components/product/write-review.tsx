@@ -1,3 +1,4 @@
+import InteractiveRating from "@/components/product/interactive-rating";
 import StarRating from "@/components/product/star-rating";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -18,7 +19,7 @@ export default function WriteReview() {
           <Textarea placeholder="Type here" className="h-24 resize-none" />
 
           <div className="flex-center justify-between gap-4">
-            <StarRating rating={0} />
+            <InteractiveRating />
             <Button className="px-8">Submit</Button>
           </div>
         </div>

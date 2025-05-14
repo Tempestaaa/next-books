@@ -18,9 +18,7 @@ export default function RelatedProducts({ slug }: Props) {
           <ProductCard key={item.id} book={item} isSmaller />
         ))}
 
-        <Button variant="ghost" className="">
-          See all
-        </Button>
+        <Button variant="ghost">See all</Button>
       </div>
     </aside>
   );

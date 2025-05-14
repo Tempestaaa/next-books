@@ -29,9 +29,9 @@ export default function RightHeader() {
   ];
 
   return (
-    <div className="flex-center gap-4 justify-between h-16">
-      <header className="font-heading text-4xl">
-        {genre ?? "All products"}
+    <div className="flex-center gap-4 justify-between">
+      <header className="font-heading text-4xl h-16 flex-center justify-center-safe">
+        <p>{genre ?? "All products"}</p>
       </header>
 
       <CustomOptions array={sortOptions} />

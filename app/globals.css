@@ -58,14 +58,3 @@
     @apply relative before:absolute before:-top-1 before:-right-1 before:size-1/2 before:shadow-[1.5px_-1.5px_var(--foreground)] after:absolute after:-bottom-1 after:-left-1 after:size-1/2 after:shadow-[-1.5px_1.5px_var(--foreground)] hover:before:top-1 hover:before:right-1 hover:after:bottom-1 hover:after:left-1 duration-300 before:duration-300 after:duration-300;
   }
 }
-
-@keyframes appear {
-  from {
-    scale: 0;
-    visibility: hidden;
-  }
-  to {
-    scale: 1;
-    visibility: visible;
-  }
-}

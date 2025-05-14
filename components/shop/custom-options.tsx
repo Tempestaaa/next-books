@@ -5,9 +5,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Options } from "@/types/common.type";
 
 type Props = {
-  array: { name: string; value: string }[];
+  array: Options[];
 };
 
 export default function CustomOptions({ array }: Props) {

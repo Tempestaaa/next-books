@@ -2,7 +2,7 @@
 
 import bookGenres from "@/data/genres";
 import { BookGenre } from "@/types/book.type";
-import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
